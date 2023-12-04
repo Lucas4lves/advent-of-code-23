@@ -55,5 +55,9 @@ export const tokenize = (line, debug=false) => {
 	}
 	console.log(line);
 	console.log(outputList);
-	return  termsParser(outputList[0],outputList[outputList.length -1]);  
+	if(outputList.length === 1)
+	{
+		return termsParser(outputList[0]);
+	}
+	return  termsParser([outputList[0],outputList[outputList.length -1]]);  
 }

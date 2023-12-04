@@ -1,14 +1,19 @@
 import { numericWords } from "../wordsDict.js"
 import { isNumeric } from "./isNumeric.js"
 //TODO: Receber uma lista em vez de dois termos separados! 
-export const termsParser = (a, b) =>{
+export const termsParser = (terms) =>{
 	
-	if(a === undefined || b === undefined)
+	if(terms[0] === undefined || terms[1] === undefined)
 	{
 		return 0;
 	}
 
-	let terms = [a, b];
+	if(terms.length  === 1)
+	{
+		return 0;
+	}
+
+	let [a, b] = terms;
 	let parsedTerms = [];	
 	terms.forEach(t =>{
 		if(isNumeric(t))
