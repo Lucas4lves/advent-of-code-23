@@ -1,6 +1,6 @@
 import { numericWords } from'../wordsDict.js';
 import { isNumeric } from './isNumeric.js';
-
+import { termsParser } from './termsParser.js';
 
 export const tokenize = (line, debug=false) => {
 
@@ -53,6 +53,7 @@ export const tokenize = (line, debug=false) => {
 			outputList,
 		};
 	}
-
-	return [outputList[0] + outputList[outputList.length -1]];
+	console.log(line);
+	console.log(outputList);
+	return  termsParser(outputList[0],outputList[outputList.length -1]);  
 }

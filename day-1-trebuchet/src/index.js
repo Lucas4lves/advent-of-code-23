@@ -8,4 +8,9 @@ let result = lines.map(line =>{
 	return tokenize(line, false);
 })
 
-console.log(result);
+let sum = 0;
+
+result.forEach(t => sum += t);
+
+
+console.log(sum);
